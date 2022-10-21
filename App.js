@@ -17,7 +17,7 @@ export default function App() {
   const findUser = async () => {
     const result = await AsyncStorage.getItem('user');
 
-    if (result === null) return setIsAppFirstTimeOpen(true);
+    if (result === false) return setIsAppFirstTimeOpen(true);
 
     setUser(JSON.parse(result));
     setIsAppFirstTimeOpen(false);

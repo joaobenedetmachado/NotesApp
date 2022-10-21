@@ -15,7 +15,7 @@ const Note = ({ item, onPress }) => {
       <Text style={styles.title} numberOfLines={2}>
         {title}
       </Text>
-      <Text numberOfLines={3}>{desc}</Text>
+      <Text numberOfLines={2}>{desc}</Text>
     </TouchableOpacity>
   );
 };

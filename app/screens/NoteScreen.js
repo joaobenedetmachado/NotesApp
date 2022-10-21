@@ -91,6 +91,11 @@ const NoteScreen = ({ user, navigation }) => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
           <Text style={styles.header}>{`Olá! ${user.name}`}</Text>
+          <RoundIconBtn
+          onPress={() => setModalVisible(true)}
+          antIconName='plus'
+          style={styles.addBtn}
+        />
           {notes.length ? (
             <SearchBar
               value={searchQuery}
@@ -124,16 +129,11 @@ const NoteScreen = ({ user, navigation }) => {
                 styles.emptyHeaderContainer,
               ]}
             >
-              <Text style={styles.emptyHeader}>Adcionar Notas</Text>
+              <Text style={styles.emptyHeader}>Add Notes</Text>
             </View>
           ) : null}
         </View>
       </TouchableWithoutFeedback>
-      <RoundIconBtn
-        onPress={() => setModalVisible(true)}
-        antIconName='plus'
-        style={styles.addBtn}
-      />
       <NoteInputModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
@@ -168,9 +168,10 @@ const styles = StyleSheet.create({
   },
   addBtn: {
     position: 'absolute',
-    right: 15,
-    bottom: 50,
+    right: 5,
+    top: 5,
     zIndex: 1,
+    color: 'black',
   },
 });
 

@@ -60,7 +60,7 @@ const NoteInputModal = ({ visible, onClose, onSubmit, note, isEdit }) => {
           <TextInput
             value={title}
             onChangeText={text => handleOnChangeText(text, 'title')}
-            placeholder='Titulo'
+            placeholder='Escreva aqui: '
             style={[styles.input, styles.title]}
           />
           <TextInput
@@ -75,11 +75,12 @@ const NoteInputModal = ({ visible, onClose, onSubmit, note, isEdit }) => {
               size={15}
               antIconName='check'
               onPress={handleSubmit}
+              style={{ color: "#000000" }}
             />
             {title.trim() || desc.trim() ? (
               <RoundIconBtn
                 size={15}
-                style={{ marginLeft: 15 }}
+                style={{ marginLeft: 15, color: "#000000" }}
                 antIconName='close'
                 onPress={closeModal}
               />

@@ -10,7 +10,7 @@ import NoteInputModal from './NoteInputModal';
 const formatDate = ms => {
   const date = new Date(ms);
   const day = date.getDate();
-  const month = date.getMonth();
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
   const hrs = date.getHours();
   const min = date.getMinutes();
@@ -38,15 +38,15 @@ const NoteDetail = props => {
 
   const displayDeleteAlert = () => {
     Alert.alert(
-      'Você tem certeza?',
-      'ATENÇÃO! AÇÃO IRREVERSIVEL',
+      'EXCLUIR NOTA',
+      'Essa ação é irreversivel',
       [
         {
           text: 'Deletar',
           onPress: deleteNote,
         },
         {
-          text: 'Voltar',
+          text: 'Não',
           onPress: () => console.log('no thanks'),
         },
       ],
@@ -99,10 +99,10 @@ const NoteDetail = props => {
       <View style={styles.btnContainer}>
         <RoundIconBtn
           antIconName='delete'
-          style={{ backgroundColor: colors.ERROR, marginBottom: 15 }}
+          style={{color: colors.ERROR, marginBottom: 15 }}
           onPress={displayDeleteAlert}
         />
-        <RoundIconBtn antIconName='edit' onPress={openEditModal} />
+        <RoundIconBtn antIconName='edit' onPress={openEditModal} style={{color: "#000000", marginBottom: 15 }}/>
       </View>
       <NoteInputModal
         isEdit={isEdit}
